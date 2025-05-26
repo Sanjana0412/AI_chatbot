@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from donor import router as donor_router
 from recipe import router as recipe_router
 from locator import router as locator_router
 
@@ -14,7 +13,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(donor_router, prefix="/donor")
 app.include_router(recipe_router, prefix="/recipe")
 app.include_router(locator_router, prefix="/locator")
 
